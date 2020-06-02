@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/resource/resource"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar":{
+    "list":[{
+      "pagePath":"pages/resource/resource",
+      "text":"资源",
+      "iconPath":"images/tabbar/basics.png",
+      "selectedIconPath":"images/tabbar/basics_cur.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "我的",
+      "iconPath": "images/tabbar/about.png",
+      "selectedIconPath": "images/tabbar/about_cur.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

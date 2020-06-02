@@ -1,0 +1,51 @@
+<cu-custom bgColor="bg-gradual-blue">
+</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+<view class="box">
+  <view class="UCenter-bg">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class='text-center'>
+        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
+        <view class="padding">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+    <image src="../../images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <view class="content" bindtap="goApplyTap">
+        <text class="cuIcon-favor text-grey"></text>
+        <text class="text-grey">XXXXX</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/index/modify/modify" hover-class="none">
+        <text class="cuIcon-edit text-blue"></text>
+        <text class="text-grey">XXXXX</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/index/manage/manage" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">XXXXX</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">XXXXX</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/index/about/about" hover-class="none">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">关于本程序</text>
+      </navigator>
+    </view>
+  </view>
+
+  
+</view>
+</scroll-view>
