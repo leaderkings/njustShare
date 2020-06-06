@@ -1,2 +1,39 @@
+<view class="box">
+  <cu-custom bgColor="bg-gradual-blue"></cu-custom>
+    <view class="grid col-2 ">
+    <view class=" solidss padding">
+    <picker bindchange="collageChange" value="{{index[0]}}" range="{{array1}}">
+    <view class="picker">
+      学院：{{array1[index[0]]}}
+    </view>
+    </picker>
+    </view>
+    <view class=" solidss padding">
+    <picker bindchange="majorChange" value="{{index[1]}}" range="{{array2}}">
+    <view class="picker">
+      专业：{{array2[index[1]]}}
+    </view>
+    </picker>
+    </view>
+    </view>
 
-<web-view src="http://www.baidu.com"></web-view>
+    <view class="grid col-2">
+
+    <view class=" solidss padding">
+    <picker bindchange="gradeChange" value="{{index[2]}}" range="{{array3}}">
+    <view class="picker">
+      年级：{{array3[index[2]]}}
+    </view>
+    </picker>
+    </view>
+
+    <view class=" solidss padding">
+    <picker bindchange="classChange" value="{{index[3]}}" range="{{array4}}">
+    <view class="picker">
+      课程：{{array4[index[3]]}}
+    </view>
+    </picker>
+    </view>
+    </view>
+</view>
+

@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/resource/resource"
+    "pages/resource/resource",
+    "pages/search/search",
+    "pages/upload/upload"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,19 +16,33 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "tabBar":{
-    "list":[{
-      "pagePath":"pages/resource/resource",
-      "text":"资源",
-      "iconPath":"images/tabbar/basics.png",
-      "selectedIconPath":"images/tabbar/basics_cur.png"
-    },
-    {
-      "pagePath": "pages/index/index",
-      "text": "我的",
-      "iconPath": "images/tabbar/about.png",
-      "selectedIconPath": "images/tabbar/about_cur.png"
-    }]
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/tabbar/search.png",
+        "selectedIconPath": "images/tabbar/search_cur.png"
+      },
+      {
+        "pagePath": "pages/resource/resource",
+        "text": "资源",
+        "iconPath": "images/tabbar/menu.png",
+        "selectedIconPath": "images/tabbar/menu_cur.png"
+      },
+      {
+        "pagePath": "pages/upload/upload",
+        "text": "上传",
+        "iconPath": "images/tabbar/upload.png",
+        "selectedIconPath": "images/tabbar/upload_cur.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "images/tabbar/about.png",
+        "selectedIconPath": "images/tabbar/about_cur.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
