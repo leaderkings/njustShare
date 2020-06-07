@@ -10,31 +10,19 @@ Page({
     swiperList: [{
     id: 0,
     type: 'image',
-    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591500506277&di=7336094349c123e20cf89f450469c089&imgtype=0&src=http%3A%2F%2Fimg1.youzy.cn%2Fcontent2%2Fthumbs%2Fp00427893.jpeg'
   }, {
     id: 1,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+        url: 'https://wx4.sinaimg.cn/mw690/6fa6f4e3ly1gf1kqybaa7j24mo3341l0.jpg',
   }, {
     id: 2,
     type: 'image',
-    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-  }, {
+        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591500351549&di=ef2b0b242a09ba05256a32b2a19acf26&imgtype=0&src=http%3A%2F%2Fbbs-fd.zol-img.com.cn%2Ft_s1200x5000%2Fg1%2FM09%2F0A%2F08%2FCg-4jVMxGDeIBYkUAAVpgMiPr4sAALpuwDGSPYABWmY707.jpg'
+  },{
     id: 3,
     type: 'image',
-    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-  }, {
-    id: 4,
-    type: 'image',
-    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-  }, {
-    id: 5,
-    type: 'image',
-    url: '../../images/showImage/img1.jpg'
-  }, {
-    id: 6,
-    type: 'image',
-    url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+        url: 'https://wx3.sinaimg.cn/mw690/6fa6f4e3ly1gfi9d3w9y3j24tc37kx74.jpg'
   }],
 
   },

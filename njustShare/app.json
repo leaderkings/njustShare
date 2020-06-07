@@ -4,12 +4,15 @@
     "pages/logs/logs",
     "pages/resource/resource",
     "pages/search/search",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "pages/index/uprecord/uprecord",
+    "pages/index/downrecord/downrecord",
+    "pages/index/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ColorUI",
+    "navigationBarTitleText": "NJUSTShare",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "black"
   },
