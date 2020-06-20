@@ -1,6 +1,17 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.cloud.init();
+    wx.cloud.callFunction({ //获取openid
+      name: 'login',
+      complete: res => {
+        this.globalData.openid= res.result.openid
+        if (this.openidCallback) {
+          this.openidCallback(res);
+        }
+        console.log(this.globalData.openid)
+      }
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -44,6 +55,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    serviceURL:'http://127.0.0.1:8080',
+    openid:''
   }
 })

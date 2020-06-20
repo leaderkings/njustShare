@@ -1,7 +1,7 @@
 <!--pages/search/search.wxml-->
 <view class="box">
   <cu-custom bgColor="bg-gradual-blue">
-    <view slot="content">首页</view>
+    <view slot="content">njustShare</view>
   </cu-custom>
 
 <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
@@ -33,7 +33,7 @@
     <view class="cu-item shadow">
       <view class="cu-list menu-avatar">
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591498955419&di=f8eb6424dbfed7bacbf6dd36e34af3f8&imgtype=0&src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-0cf860d843cc71ec6865fe66b7ee8b71_1200x500.jpg);"></view>
+          <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
           <view class="content flex-sub">
             <view>高等数学ppt</view>
             <view class="text-gra y text-sm flex justify-between">

@@ -1,6 +1,5 @@
 <view class="box">
   <cu-custom bgColor="bg-gradual-blue"></cu-custom>
-    <view class="grid col-2 ">
     <view class=" solidss padding">
     <picker bindchange="collageChange" value="{{index[0]}}" range="{{array1}}">
     <view class="picker">
@@ -17,7 +16,6 @@
     </view>
     </view>
 
-    <view class="grid col-2">
 
     <view class=" solidss padding">
     <picker bindchange="gradeChange" value="{{index[2]}}" range="{{array3}}">
@@ -27,26 +25,15 @@
     </picker>
     </view>
 
-    <view class=" solidss padding">
-    <picker bindchange="classChange" value="{{index[3]}}" range="{{array4}}">
-    <view class="picker">
-      课程：{{array4[index[3]]}}
-    </view>
-    </picker>
-    </view>
-    </view>
-</view>
-
-
-<view class="cu-card dynamic ">
-    <view class="cu-item shadow">
+<view class="cu-card dynamic">
+    <view class="cu-item shadow" wx:for="{{file_list}}" >
       <view class="cu-list menu-avatar">
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591498955419&di=f8eb6424dbfed7bacbf6dd36e34af3f8&imgtype=0&src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-0cf860d843cc71ec6865fe66b7ee8b71_1200x500.jpg);"></view>
+          <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
           <view class="content flex-sub">
-            <view>高等数学ppt</view>
+            <view>{{item.file_name}} {{item.file_type}}</view>
             <view class="text-gra y text-sm flex justify-between">
-              大一上
+              {{item.college}} 
             </view>
           </view>
         </view>
