@@ -5,16 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    fileList:[{
+      filePath:'',
+      size:0,
+      createTime:0
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSavedFileList({
+      success(res){
+        that.setData({
+          fileList:res.fileList
+        })
+      }
+    })
   },
-
+  openDocument:function(item){
+    var info = item.currentTarget.dataset.item;
+    wx.openDocument({
+      filePath: info.filePath,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

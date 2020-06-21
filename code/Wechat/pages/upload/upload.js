@@ -1,4 +1,5 @@
 // pages/upload/upload.js
+const app = getApp();
 Page({
 
   /**
@@ -10,8 +11,9 @@ Page({
     ],
     pickerGrade: ['大一上', '大一下', '大二上', '大二下', '大三上', '大三上', '大四上', '大四下'],
     pickerType:['PPT','试卷','电子书'],
-    fileList: []
+    fileList: [],
 
+    serviceURL:''
   }, 
   PickerChangeType(e) {
     console.log(e);
@@ -55,7 +57,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      serviceURL: app.globalData.serviceURL + '/upload.html'
+    })
+    console.log(this.data.serviceURL)
   },
 
   /**
@@ -83,7 +88,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**

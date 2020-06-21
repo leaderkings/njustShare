@@ -60,4 +60,4 @@
 </form>
 
 -->
-<web-view src='http://127.0.0.1:8080/upload.html'></web-view>
+<web-view src='{{serviceURL}}'></web-view>

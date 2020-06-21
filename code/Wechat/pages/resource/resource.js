@@ -93,14 +93,19 @@ Page({
     this.getFileList();
   },
   downLoad:function(item){
+    var info = item.currentTarget.dataset.item
     wx.downloadFile({
-      url: app.globalData.serviceURL + '/' + item.file_name + '.' + item.file_type,
+      url: app.globalData.serviceURL + '/' + info.file_name + '.' + info.file_type,
       success(res){
         console.log(res);
         var tempPath = res.tempFilePath;
         wx.saveFile({
           tempFilePath: tempPath,
           success(e){
+            console.log(e.savedFilePath)
+            wx.openDocument({
+              filePath: e.savedFilePath
+            })
             wx.showToast({
               title: '保存成功',
               icon: 'success',

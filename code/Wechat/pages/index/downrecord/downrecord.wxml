@@ -4,11 +4,11 @@
   <view slot="content">下载记录</view>
 </cu-custom>
 
-<view class="cu-timeline">
+<view class="cu-timeline" wx:for='{{fileList}}' bindtap="openDocument" data-item='{{item}}'>
   <view class="cu-time"></view>
   <view class="cu-item">
     <view class="content">
-      <text>2020-6-10</text> 【下载】 高等数学ppt
+      <text>{{item.filePath}}</text>
     </view>
   </view>
 </view>
