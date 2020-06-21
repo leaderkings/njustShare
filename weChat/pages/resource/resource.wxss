@@ -1,4 +1,0 @@
-.solidss{
-  border: 2rpx solid black;
-  border-radius: 8px;
-}
