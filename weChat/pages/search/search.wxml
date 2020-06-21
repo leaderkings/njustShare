@@ -1,0 +1,47 @@
+<!--pages/search/search.wxml-->
+<view class="box">
+  <cu-custom bgColor="bg-gradual-blue">
+    <view slot="content">njustShare</view>
+  </cu-custom>
+
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
+  <view class="search padding-xl">
+    <view class="padding-sm radius shadow-warp bg-white flex  align-center">
+      <input class="basis-xl text-xl" style="margin-left:5%" type="text" placeholder="输入关键词搜索" confirm-type="search" bindinput="inputBuffer"></input>
+      <text class=" lg cuIcon-search padding" bindtap="search"></text>
+    </view>
+  </view>
+</view>
+
+
+  <!--标签-->
+  <view class="cu-bar bg-white" >
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-green">推荐</text>
+      <text class="bg-green" style="width:2rem"></text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+
+  <view class="cu-card dynamic no-card">
+    <view class="cu-item shadow">
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
+          <view class="content flex-sub">
+            <view>高等数学ppt</view>
+            <view class="text-gra y text-sm flex justify-between">
+              大一上
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
