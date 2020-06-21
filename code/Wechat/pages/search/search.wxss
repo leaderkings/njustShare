@@ -1,0 +1,4 @@
+/* pages/search/search.wxss */
+.test{
+  border: 8px solid green;
+}

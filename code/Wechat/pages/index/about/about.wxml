@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+	<view slot="content">关于</view>
+</cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于NJUSTShare</view>
+  <view class='text-content'>
+    <view>Hi~欢迎使用NJUSTShare！</view>
+    <view class='margin-top-sm'>该项目是供南京理工大学师生使用的资源共享平台。这个项目不仅可以下载你所需要的电子资源，还可以上传你拥有的电子资源来获取积分。我们也会不定期更新一些小程序的解决方案，或者你有一些好的想法可以在GitHub里提交给我们。</view>
+    <view class='margin-top-sm'>项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里扫描赞赏码支持一下！</view>
+    
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>
