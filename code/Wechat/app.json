@@ -7,7 +7,8 @@
     "pages/upload/upload",
     "pages/index/uprecord/uprecord",
     "pages/index/downrecord/downrecord",
-    "pages/index/info/info"
+    "pages/index/info/info",
+    "pages/resource/download/download"
   ],
   "window": {
     "backgroundTextStyle": "light",

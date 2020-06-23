@@ -115,5 +115,20 @@ Page({
         })
       }
     })
+  },
+  click: function () {
+    wx.navigateTo({
+      url: '../resource/download/download',
+      success: function (res) {
+
+      },
+      fail: function (res) {
+
+      },
+      complete: function (res) {
+
+      },
+    })
   }
+
 })

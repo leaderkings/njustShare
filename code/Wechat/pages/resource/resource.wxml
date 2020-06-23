@@ -1,43 +1,50 @@
-<view class="box">
-  <cu-custom bgColor="bg-gradual-blue"></cu-custom>
-    <view class=" solidss padding">
+<cu-custom bgColor="bg-gradual-blue">
+</cu-custom>
+<view class="box   cu-form-group radius light  cu-item shadow ">
+  <view class="padding-left-sm padding-right-sm  align-center radius  ">
     <picker bindchange="collageChange" value="{{index[0]}}" range="{{array1}}">
-    <view class="picker">
-      学院：{{array1[index[0]]}}
-    </view>
+      <view class="picker">
+      <text class="text-black text-bold"> 学院：{{array1[index[0]]}}</text>
+      </view>
     </picker>
-    </view>
-    <view class=" solidss padding">
-    <picker bindchange="majorChange" value="{{index[1]}}" range="{{array2}}">
-    <view class="picker">
-      专业：{{array2[index[1]]}}
-    </view>
-    </picker>
-    </view>
-    </view>
+    
 
+  </view>
 
-    <view class=" solidss padding">
+  
+
+  <view class="padding-left-lg  align-center radius  ">
     <picker bindchange="gradeChange" value="{{index[2]}}" range="{{array3}}">
-    <view class="picker">
-      年级：{{array3[index[2]]}}
-    </view>
+      <view class="picker">
+      <text class="text-black text-bold"> 年级：{{array3[index[2]]}}</text>
+      </view>
     </picker>
-    </view>
+  </view>
+
+
+</view>
+<view class="box   cu-form-group   radius  light   shadow ">
+  <view class=" padding-left-sm  padding-right-sm  align-center radius  ">
+    <picker bindchange="majorChange" value="{{index[1]}}" range="{{array2}}">
+      <view class="picker">
+     <text class="text-black text-bold"> 专业：{{array2[index[1]]}}</text>
+      </view>
+    </picker>
+  </view>
+</view>
 
 <view class="cu-card dynamic">
-    <view class="cu-item shadow" wx:for="{{file_list}}" bindtap="downLoad" data-item="{{item}}">
-      <view class="cu-list menu-avatar">
-        <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
-          <view class="content flex-sub">
-            <view>{{item.file_name}} {{item.file_type}}</view>
-            <view class="text-gra y text-sm flex justify-between">
-              {{item.college}} 
-            </view>
+  <view class="cu-item shadow" wx:for="{{file_list}}" bindtap="downLoad" data-item="{{item}}">
+    <view class="cu-list menu-avatar"  bindtap="click"  >
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
+        <view class="content flex-sub">
+          <view>{{item.file_name}} {{item.file_type}}</view>
+          <view class="text-gra y text-sm flex justify-between">
+            {{item.college}}
           </view>
         </view>
       </view>
     </view>
   </view>
-
+</view>

@@ -1,0 +1,54 @@
+<!--pages/index/info/info.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">文件信息</view>
+</cu-custom>
+<view class="margin-lg radius">
+  <form>
+    <view class="cu-form-group margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">文件名</text>
+        <text>高等数学</text>
+      </view>
+    </view>
+    <view class="cu-form-group ">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">学院</text>
+        <text>{{}}</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">专业</text>
+        <text>{{}}</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">年级</text>
+        <text>{{}}</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">种类</text>
+        <text>{{}}</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-black text-bold" style="display:inline-block;width:130rpx;">上传人</text>
+        <text>{{}}</text>
+      </view>
+    </view>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-red margin-tb-sm lg">下载文件</button>
+    </view>
+  </form>
+</view>
