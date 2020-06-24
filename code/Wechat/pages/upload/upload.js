@@ -57,57 +57,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
     this.setData({
-      serviceURL: app.globalData.serviceURL + '/upload.html'
+      serviceURL: app.globalData.serviceURL + '/upload.html?openid=' + app.globalData.openid +"&time="+timestamp
     })
     console.log(this.data.serviceURL)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  
   onShow: function () {
-
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    this.setData({
+      serviceURL: app.globalData.serviceURL + '/upload.html?openid=' + app.globalData.openid +"&time="+timestamp
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

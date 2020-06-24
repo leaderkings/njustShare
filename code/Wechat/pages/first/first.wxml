@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-green"><view slot="content">注册</view></cu-custom>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">注意</view>
+      <view class="action" bindtap="hideModal1">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      确认姓名、学号填写正确，一旦注册不可修改
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal1">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="hideModal2">确定</button>
+
+      </view>
+    </view>
+  </view>
+</view>
+<form>
+<view class="cu-form-group margin-top">
+		<view class="title">姓名</view>
+		<input bindblur="nameChange"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学号</view>
+		<input bindblur="schoolNumChange"></input>
+	</view>
+  <view class="cu-form-group margin-top">
+		<view class="title">学院选择</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'计算机科学与工程学院'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">电话</view>
+		<input bindblur="phoneChange"></input>
+	</view>
+
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-olive lg" bindtap="showModal" data-target="Modal">注册</button>
+  </view>
+</form>

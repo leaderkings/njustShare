@@ -24,11 +24,23 @@
   </view>
 </view>
 <form>
-<view class="cu-form-group margin-top">
+ <view class="cu-form-group margin-top">
 		<view class="title">姓名</view>
 		<view>{{name}}</view>
 	</view>
- <view class="cu-form-group ">
+	
+<!--学生信息-->
+<view class="choose" wx-if="{{role==='学生'}}">
+	<view class="cu-form-group ">
+		<view class="title">学号</view>
+		<view>{{schoolNum}}</view>
+	</view>
+</view>
+<view class="cu-form-group ">
+		<view class="title">积分</view>
+		<view>{{point}}</view>
+	</view>
+ <view class="cu-form-group margin-top">
 		<view class="title">身份</view>
 		<picker bindchange="PickerChangeRole" value="{{index_Role}}" range="{{pickerRole}}">
 			<view class="picker">
@@ -45,21 +57,6 @@
 			</view>
 		</picker>
 	</view>
-<!--学生信息-->
-<view class="choose" wx-if="{{role==='学生'}}">
-	<view class="cu-form-group margin-top">
-		<view class="title">学号</view>
-		<input bindblur="classChange" placeholder='{{className}}'></input>
-	</view>
-  <view class="cu-form-group ">
-		<view class="title">年级</view>
-		<picker bindchange="PickerChangeGrade" value="{{index_Grade}}" range="{{pickerGrade}}">
-			<view class="picker">
-				{{pickerGrade[index_Grade]}}
-			</view>
-		</picker>
-	</view>
-</view>
   <view class="cu-form-group margin-top">
 		<view class="title">电话</view>
 		<input bindblur="phoneChange" placeholder='{{phone}}'></input>

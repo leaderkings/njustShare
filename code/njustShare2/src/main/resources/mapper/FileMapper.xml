@@ -4,4 +4,32 @@
     <select id="getFileList" parameterType="java.lang.String" resultType="com.njustshare.demo.entity.FileInfo">
         select * from njustshare.file_info where college=#{college} and major = #{major} and grade = #{grade};
     </select>
+    <select id="checkPoint" parameterType="java.lang.String" resultType="java.lang.String">
+        select "yes" from njustshare.user_info where openID = #{openid} and point &gt;= 5;
+    </select>
+    <update id="download" parameterType="java.lang.String" >
+        update njustshare.user_info set point = point - 5 where openID = #{openid};
+    </update>
+    <update id="incCount" parameterType="java.lang.String">
+        update njustshare.file_info set downloadCount = downloadCount + 1 where fileID = #{fileID};
+    </update>
+    <update id="upload" parameterType="java.lang.String" >
+        update njustshare.user_info set point = point + 20 where openID = #{openid};
+    </update>
+    <insert id="addFile" parameterType="java.lang.String">
+        insert into file_info(file_name, creator_ID, college, major, grade, file_type)
+        value (#{file_name},#{creatorID},#{college},#{major},#{grade},#{file_type})
+    </insert>
+    <delete id="deleteFile" parameterType="java.lang.String">
+        delete from file_info where fileID=#{fileID};
+    </delete>
+    <select id="getCrodList" parameterType="java.lang.String" resultType="com.njustshare.demo.entity.FileInfo">
+        select * from file_info where creator_ID=#{openid};
+    </select>
+    <select id="getBestList" resultType="com.njustshare.demo.entity.FileInfo">
+        select * from njustshare.file_info  order by downloadCount desc limit 10;
+    </select>
+    <select id="searchList" resultType="com.njustshare.demo.entity.FileInfo" parameterType="java.lang.String">
+        select * from file_info where file_name like #{data} or college like #{data} or major like #{data} or grade like #{data};
+    </select>
 </mapper>

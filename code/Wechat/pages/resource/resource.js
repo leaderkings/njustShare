@@ -13,18 +13,18 @@ Page({
     array2: ['机械', '兵器'],
     array3: ['大一上', '大一下', '大二上', '大二下', '大三上', '大三上', '大四上', '大四下'],
     file_list:[{
+      fileID:'',
       file_name:'高等数学',
       creator_ID:'123',
       college:'计算机学院',
-      file_path:'',
       file_type:'ppt',
       downloadCount:0
     },
     {
+      fileID:'',
       file_name:'高等数学',
       creator_ID:'123',
       college:'计算机学院',
-      file_path:'',
       file_type:'ppt',
       downloadCount:0
     }]
@@ -72,7 +72,6 @@ Page({
   },
   getFileList:function(){
     var that = this;
-    var url = app.globalData.serviceURL;
     wx.request({
       url: app.globalData.serviceURL+'/file/fileList',
       method:'GET',
@@ -89,30 +88,61 @@ Page({
       }
     })
   },
-  onLoad:function(e){
+  onShow:function(e){
     this.getFileList();
   },
   downLoad:function(item){
     var info = item.currentTarget.dataset.item
-    wx.downloadFile({
-      url: app.globalData.serviceURL + '/' + info.file_name + '.' + info.file_type,
-      success(res){
-        console.log(res);
-        var tempPath = res.tempFilePath;
-        wx.saveFile({
-          tempFilePath: tempPath,
-          success(e){
-            console.log(e.savedFilePath)
-            wx.openDocument({
-              filePath: e.savedFilePath
-            })
-            wx.showToast({
-              title: '保存成功',
-              icon: 'success',
-              duration: 2000
-            })
-          }
-        })
+    wx.request({
+      url: app.globalData.serviceURL+'/file/checkPoint',
+      data:{
+        openid:app.globalData.openid
+      },
+      success(e){
+        if(e.data.result == 'yes'){
+          wx.downloadFile({
+            url: app.globalData.serviceURL + '/' + info.file_name + '.' + info.file_type,
+            success(res){
+              console.log(res);
+              var tempPath = res.tempFilePath;
+              wx.saveFile({
+                tempFilePath: tempPath,
+                success(e){
+                  var idNum = app.globalData.openid
+                  wx.request({
+                    url:  app.globalData.serviceURL+'/file/download?openid=' + idNum + '&fileID=' + info.fileID,
+                    method:"POST",
+                    success(m){
+                      console.log(app.globalData.openid)
+                      wx.openDocument({
+                        filePath: e.savedFilePath
+                      })
+                      wx.showToast({
+                        title: '保存成功',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    }
+                  })
+                  
+                }
+              })
+            }
+          })
+        }
+        else{
+          wx.showModal({
+            title: '错误',
+            content: '您当前积分不足',
+            success: function (res) {
+              if (res.confirm) {  
+                console.log('点击确认回调')
+              } else {   
+                console.log('点击取消回调')
+              }
+            }
+          })
+        }
       }
     })
   }

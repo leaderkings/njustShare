@@ -43,6 +43,28 @@ Page({
         }
       })
     }
+    var that = this
+    wx.cloud.callFunction({ //获取openid
+      name: 'login',
+      complete: result => {
+        wx.request({
+          url: app.globalData.serviceURL + '/user/isRegister?openid=' + result.result.openid,
+          success(res) {
+            console.log(res.data)
+            if (res.data == 'yes') {
+              wx.switchTab({
+                url: '../search/search',
+              })
+            }
+            else {
+              wx.navigateTo({
+                url: '../first/first?openid=' + result.result.openid,
+              })
+            }
+          }
+        })
+      }
+    })
   },
   CopyLink(e) {
     wx.setClipboardData({

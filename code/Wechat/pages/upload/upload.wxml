@@ -60,4 +60,4 @@
 </form>
 
 -->
-<web-view src='{{serviceURL}}'></web-view>
+<web-view wx:if="{{serviceURL}}" src='{{serviceURL}}'></web-view>

@@ -1,0 +1,24 @@
+<!--pages/main/result/result.wxml-->
+<view class="box">
+  <cu-custom bgColor="bg-gradual-blue" isBack="true">
+    <view slot="content">搜索结果</view>
+  </cu-custom>
+</view>
+
+
+ <view class="cu-card dynamic">
+    <view class="cu-item shadow" wx:for="{{fileList}}" bindtap="downLoad" data-item="{{item}}">
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(../../../../images/showImage/ppt.jpg);"></view>
+          <view class="content flex-sub">
+            <view>{{item.file_name}} {{item.file_type}}</view>
+            <view class="text-gra y text-sm flex justify-between">
+              {{item.college}} 
+              <view class="fr">下载次数：{{item.downloadCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

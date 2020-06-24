@@ -1,11 +1,21 @@
 package com.njustshare.demo.entity;
 
 public class FileInfo {
+    public String fileID;
     public String file_name;
     public String creator_ID;
     public String college;
     public String file_path;
     public String file_type;
+    public String downloadCount;
+
+    public String getDownloadCount() {
+        return downloadCount;
+    }
+
+    public void setDownloadCount(String downloadCount) {
+        this.downloadCount = downloadCount;
+    }
 
     public String getFile_name() {
         return file_name;
@@ -25,6 +35,15 @@ public class FileInfo {
 
     public String getFile_type() {
         return file_type;
+    }
+
+
+    public String getFileID() {
+        return fileID;
+    }
+
+    public void setFileID(String fileID) {
+        this.fileID = fileID;
     }
 
     public void setFile_name(String file_name) {

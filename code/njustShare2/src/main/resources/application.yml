@@ -1,6 +1,12 @@
 server:
   port: 8080
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 100MB
+      max-request-size: 100MB
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/njustShare?serverTimezone=GMT%2B8&
       autoReconnect=true&failOverReadOnly=false&useunicode=true&characterEncoding=utf8
@@ -9,6 +15,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     sql-script-encoding: utf-8
   resources:
-    static-locations: classPath:/static
+    static-locations:
+    - classPath:/static
+    - classPath:/document
+    - file:${upload-path}
+    - file:/document
+upload-path: F:\downloand
 mybatis:
   mapper-locations: classpath*:mapper/*.xml

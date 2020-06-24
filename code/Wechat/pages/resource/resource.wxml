@@ -34,6 +34,7 @@
             <view>{{item.file_name}} {{item.file_type}}</view>
             <view class="text-gra y text-sm flex justify-between">
               {{item.college}} 
+              <view class="fr">下载次数：{{item.downloadCount}}</view>
             </view>
           </view>
         </view>

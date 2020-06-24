@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.njustshare.demo.dao.UserDao">
+    <insert id="insert" parameterType="com.njustshare.demo.entity.User">
+        insert  into user_info(openID,realName,schoolNum,college,phone)
+        value (#{openID},#{realName},#{schoolNum},#{college},#{phone})
+    </insert>
+    <select id="getMyInfo" parameterType="java.lang.String" resultType="com.njustshare.demo.entity.User">
+        select * from njustshare.user_info where openID=#{openID};
+    </select>
+    <update id="update" parameterType="com.njustshare.demo.entity.User">
+        update njustshare.user_info set realName=#{realName},schoolNum=#{schoolNum},college=#{college},phone=#{phone}
+        where openID=#{openID};
+    </update>
+    <select id="isRegister" parameterType="java.lang.String" resultType="java.lang.String">
+        select "yes" from user_info where openID=#{openID};
+    </select>
+</mapper>
